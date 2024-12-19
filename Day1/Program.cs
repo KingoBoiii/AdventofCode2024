@@ -1,6 +1,7 @@
 ﻿const string SPLIT_SPACE = "   ";
 const string SPLIT_NEWLINE = "\n";
 
+#if false
 var content = File.ReadAllText("input.txt");
 
 var values = content.Split([SPLIT_SPACE, SPLIT_NEWLINE], StringSplitOptions.RemoveEmptyEntries);
@@ -28,12 +29,35 @@ for (int i = 0; i < values.Length; i++)
     }
 }
 
+var count = values.Length / 2;
+#else
+var leftArray = new List<int>();
+var rightArray = new List<int>();
+
+using var reader = new StreamReader("input.txt");
+
+var line = reader.ReadLine();
+while (line != null)
+{
+    var lineValues = line.Split(SPLIT_SPACE);
+
+    leftArray.Add(int.Parse(lineValues[0]));
+    rightArray.Add(int.Parse(lineValues[1]));
+
+    line = reader.ReadLine();
+}
+
+reader.Close();
+
+var count = leftArray.Count;
+#endif
+
 var orderedLeftArray = leftArray.OrderBy(x => x).ToArray();
 var orderedRightArray = rightArray.OrderBy(x => x).ToArray();
 
-var distances = new int[values.Length / 2];
+var distances = new int[count];
 
-for (int i = 0; i < values.Length / 2; i++)
+for (int i = 0; i < count; i++)
 {
     distances[i] = Math.Abs(orderedLeftArray[i] - orderedRightArray[i]);
 }
