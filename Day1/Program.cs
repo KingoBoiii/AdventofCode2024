@@ -10,7 +10,7 @@ Console.WriteLine($"Total distance is {totalDistance}");
 
 Console.Read();
 
-(int[] LeftArray, int[] RightArray, int Count) LoadInputFile(string filepath, bool useIOFile = true)
+static (int[] LeftArray, int[] RightArray, int Count) LoadInputFile(string filepath, bool useIOFile = true)
 {
     const string SPLIT_SPACE = "   ";
     const string SPLIT_NEWLINE = "\n";
