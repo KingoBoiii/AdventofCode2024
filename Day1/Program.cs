@@ -2,11 +2,12 @@
 
 var (leftArray, rightArray, count) = LoadInputFile("input.txt");
 
-var totalDistance = Part1.CalculateDistance(leftArray, rightArray, count);
+var totalDistance = Part1.CalculateTotalDistance(leftArray, rightArray, count);
 
-
+var totalSimilarity = Part2.CalculateTotalSimilarity(leftArray, rightArray, count);
 
 Console.WriteLine($"Total distance is {totalDistance}");
+Console.WriteLine($"Total similarity is {totalSimilarity}");
 
 Console.Read();
 

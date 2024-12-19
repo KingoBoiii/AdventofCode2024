@@ -2,7 +2,7 @@
 
 internal sealed class Part1
 {
-    internal static int CalculateDistance(IEnumerable<int> leftArray, IEnumerable<int> rightArray, int count)
+    internal static int CalculateTotalDistance(IEnumerable<int> leftArray, IEnumerable<int> rightArray, int count)
     {
         var orderedLeftArray = leftArray.OrderBy(x => x).ToArray();
         var orderedRightArray = rightArray.OrderBy(x => x).ToArray();
