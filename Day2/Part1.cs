@@ -28,8 +28,6 @@ internal static class Part1
 
             yield return line;
 
-            // Console.WriteLine($"{line} -> Safe");
-
             line = streamReader.ReadLine();
         }
 
