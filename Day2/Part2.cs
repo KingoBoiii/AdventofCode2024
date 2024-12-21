@@ -20,6 +20,12 @@ internal static class Part2
                 continue;
             }
 
+            if (!levels.Select((t, i) => levels.Where((_, index) => index != i).ToArray()).Any(IsSafe))
+            {
+                line = streamReader.ReadLine();
+                continue;
+            }
+
             if (!IsSafe(levels))
             {
                 line = streamReader.ReadLine();
