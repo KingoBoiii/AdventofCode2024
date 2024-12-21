@@ -8,4 +8,10 @@
 		<RootNamespace>AdventofCode2024.Day2</RootNamespace>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <None Update="input.txt">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
 </Project>
